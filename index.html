@@ -274,6 +274,27 @@
       .fortuneText{ font-size:17px; }
       button, a.btn{ flex:1 1 100%; }
     }
+
+@media (max-width:420px){
+  /* 상단 영역 겹침 방지 */
+  .top{
+    flex-direction: column;
+    align-items: flex-start;
+    gap:10px;
+  }
+  .brand{
+    width:100%;
+  }
+  .pill{
+    align-self: flex-end;   /* 오른쪽으로 */
+  }
+
+  /* 이미 있던 것들 */
+  .grid{ grid-template-columns:1fr; }
+  .fortuneText{ font-size:17px; }
+  button, a.btn{ flex:1 1 100%; }
+}
+
   </style>
 </head>
 <body>
