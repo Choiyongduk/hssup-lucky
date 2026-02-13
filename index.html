@@ -13,15 +13,12 @@
       --text:#0b1220;
       --muted:rgba(15,23,42,.68);
 
-      /* 브랜드 고정 */
       --brand:#ff7a18;
       --brandRgb:255,122,24;
 
-      --line:rgba(15,23,42,.12);
       --shadow: 0 18px 55px rgba(15,23,42,.18);
       --radius:22px;
     }
-
     *{ box-sizing:border-box; }
     body{
       margin:0;
@@ -32,75 +29,42 @@
       justify-content:center;
       padding:14px;
       color:var(--text);
-
       background:
         radial-gradient(1200px 700px at 15% 0%, rgba(var(--brandRgb),.18), transparent 55%),
         radial-gradient(900px 650px at 110% 5%, rgba(0,0,0,.08), transparent 55%),
         radial-gradient(900px 700px at 50% 115%, rgba(255,255,255,.65), transparent 55%),
         linear-gradient(135deg, var(--bg1), var(--bg2));
     }
-
     .wrap{ width:min(560px, 100%); }
 
     .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:10px;
-      flex-wrap:wrap;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; margin-bottom:10px; flex-wrap:wrap;
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-      flex: 1 1 240px;
-    }
-
+    .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex: 1 1 240px; }
     .logo{
       width:42px;height:42px;border-radius:16px;
       background: linear-gradient(135deg, var(--brand), rgba(255,200,140,1));
       box-shadow: 0 14px 30px rgba(var(--brandRgb),.22);
       display:grid; place-items:center;
-      color:#111;
-      font-weight:1000;
-      letter-spacing:.5px;
+      color:#111; font-weight:1000; letter-spacing:.5px;
       flex:0 0 auto;
     }
-
     .brand h1{
-      font-size:15px;
-      margin:0;
-      letter-spacing:-.25px;
-      line-height:1.2;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-size:15px; margin:0; letter-spacing:-.25px; line-height:1.2;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
     .brand p{
-      margin:2px 0 0;
-      font-size:12px;
-      color:rgba(15,23,42,.62);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      margin:2px 0 0; font-size:12px; color:rgba(15,23,42,.62);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
-
-    /* 날짜 pill (고정 브랜드 컬러) */
     .pill{
-      font-size:11px;
-      color:rgba(0,0,0,.88);
+      font-size:11px; color:rgba(0,0,0,.88);
       background: var(--brand);
-      padding:7px 10px;
-      border-radius:999px;
-      font-weight:1000;
-      letter-spacing:-.2px;
+      padding:7px 10px; border-radius:999px;
+      font-weight:1000; letter-spacing:-.2px;
       box-shadow: 0 14px 30px rgba(var(--brandRgb),.18);
-      white-space:nowrap;
-      flex:0 0 auto;
-      margin-left:auto;
+      white-space:nowrap; flex:0 0 auto; margin-left:auto;
     }
 
     .card{
@@ -112,45 +76,19 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
-
     .hero{
       padding:14px 16px 10px;
       border-bottom:1px solid rgba(15,23,42,.10);
-      display:flex;
-      flex-direction:column;
-      gap:6px;
+      display:flex; flex-direction:column; gap:6px;
     }
-
-    .date{
-      font-size:12px;
-      color:rgba(15,23,42,.62);
-      font-weight:800;
-    }
-
-    .title{
-      font-size:16px;
-      font-weight:1000;
-      margin:0;
-      letter-spacing:-.35px;
-      line-height:1.25;
-    }
-
-    .subtitle{
-      margin:0;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.45;
-      font-weight:650;
-    }
+    .date{ font-size:12px; color:rgba(15,23,42,.62); font-weight:800; }
+    .title{ font-size:16px; font-weight:1000; margin:0; letter-spacing:-.35px; line-height:1.25; }
 
     .content{
       padding:14px 16px 14px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+      display:flex; flex-direction:column; gap:12px;
     }
 
-    /* ✅ 메시지 가독성 업 */
     .fortuneBox{
       border:1px solid rgba(var(--brandRgb),.30);
       background: linear-gradient(180deg, rgba(var(--brandRgb),.10), rgba(255,255,255,.42));
@@ -158,23 +96,18 @@
       padding:16px 14px;
     }
     .fortuneType{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:12px;
-      font-weight:1000;
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:1000;
       color: var(--brand);
-      margin-bottom:10px;
-      letter-spacing:-.2px;
+      margin-bottom:10px; letter-spacing:-.2px;
     }
     .dot{
       width:9px;height:9px;border-radius:999px;
       background: var(--brand);
       box-shadow: 0 0 0 5px rgba(var(--brandRgb),.16);
     }
-
     .fortuneText{
-      font-size:20px;            /* 크게 */
+      font-size:20px;
       font-weight:1000;
       letter-spacing:-.45px;
       line-height:1.35;
@@ -227,15 +160,6 @@
       background: linear-gradient(180deg, rgba(var(--brandRgb),.20), rgba(255,255,255,.60));
     }
 
-    .footer{
-      padding:10px 16px 12px;
-      border-top: 1px solid rgba(15,23,42,.10);
-      color: rgba(15,23,42,.66);
-      font-size:11px;
-      line-height:1.55;
-      font-weight:650;
-    }
-
     .toast{
       position:fixed;
       left:50%;
@@ -252,29 +176,115 @@
       pointer-events:none;
       transition: opacity .18s ease, transform .18s ease;
       font-weight:900;
+      z-index:50;
     }
     .toast.on{
       opacity:1;
       transform: translateX(-50%) translateY(-4px);
     }
 
-    /* ✅ 한 화면에 더 잘 들어오게 모바일 최적화 */
+    /* -------- 쿠폰 모달 -------- */
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      background: rgba(15,23,42,.35);
+      z-index:100;
+    }
+    .modal.on{ display:flex; }
+    .modalCard{
+      width:min(520px, 100%);
+      border-radius: 18px;
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(15,23,42,.14);
+      box-shadow: 0 22px 65px rgba(15,23,42,.25);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .modalHead{
+      padding:14px 14px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .modalTitle{
+      margin:0;
+      font-size:14px;
+      font-weight:1000;
+      letter-spacing:-.25px;
+    }
+    .xBtn{
+      width:36px; height:36px;
+      border-radius: 12px;
+      border:1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.65);
+      cursor:pointer;
+      font-weight:1000;
+    }
+    .modalBody{
+      padding:14px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .couponBox{
+      border:1px dashed rgba(var(--brandRgb),.55);
+      background: linear-gradient(180deg, rgba(var(--brandRgb),.10), rgba(255,255,255,.75));
+      border-radius: 16px;
+      padding:14px 12px;
+    }
+    .couponBadge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(var(--brandRgb),.14);
+      border:1px solid rgba(var(--brandRgb),.22);
+      font-weight:1000;
+      font-size:12px;
+      letter-spacing:-.2px;
+      width:fit-content;
+      margin:0 auto 10px auto;
+    }
+    .couponPrize{
+      margin:0;
+      font-size:18px;
+      font-weight:1100;
+      letter-spacing:-.25px;
+      text-align:center;
+      line-height:1.25;
+    }
+    .couponCode{
+      margin:10px 0 0;
+      font-size:22px;
+      font-weight:1100;
+      letter-spacing:1px;
+      text-align:center;
+    }
+    .couponMeta{
+      margin:8px 0 0;
+      font-size:12px;
+      color: rgba(15,23,42,.70);
+      line-height:1.5;
+      font-weight:700;
+      text-align:center;
+    }
+    .modalActions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:2px;
+    }
+
     @media (max-width:420px){
       body{ padding:12px; }
       .top{ margin-bottom:8px; }
-      .pill{
-        width:100%;
-        text-align:right;
-        padding:6px 10px;
-        font-size:11px;
-        border-radius:14px;
-      }
+      .pill{ width:100%; text-align:right; padding:6px 10px; font-size:11px; border-radius:14px; }
       .hero{ padding:12px 14px 9px; }
       .content{ padding:12px 14px 12px; gap:10px; }
       .fortuneBox{ padding:14px 12px; }
       .fortuneText{ font-size:19px; }
       button, a.btn{ flex:1 1 100%; padding:11px 12px; }
-      .footer{ padding:10px 14px 12px; }
     }
   </style>
 </head>
@@ -307,6 +317,7 @@
 
         <div class="actions">
           <button class="primary" id="newBtn" type="button">🔄 새 운세 뽑기</button>
+          <button id="couponBtn" type="button">🎁 쿠폰 뽑기 (평생 1회)</button>
           <a class="btn"
              href="https://www.instagram.com/h_ssup_/"
              target="_blank"
@@ -315,111 +326,58 @@
           </a>
         </div>
       </div>
-
-      <div class="footer">
-        © HSSUP — 오늘도 예뻐질 행운이 쏟아지는 날 ✨
-      </div>
     </div>
   </div>
 
   <div class="toast" id="toast">완료!</div>
 
+  <!-- 쿠폰 모달 -->
+  <div class="modal" id="couponModal" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="couponTitle">
+      <div class="modalHead">
+        <p class="modalTitle" id="couponTitle">히썹 스페셜 쿠폰</p>
+        <button class="xBtn" id="closeModalBtn" type="button">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="couponBox">
+          <div class="couponBadge" id="couponBadge">🎲 1회 뽑기</div>
+          <p class="couponPrize" id="couponPrize">—</p>
+          <p class="couponCode" id="couponCode">—</p>
+          <p class="couponMeta" id="couponMeta">—</p>
+        </div>
+
+        <div class="modalActions">
+          <button class="primary" id="revealBtn" type="button">🎲 지금 뽑기</button>
+          <button id="copyCouponBtn" type="button">📋 쿠폰코드 복사</button>
+          <button id="okBtn" type="button">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // ------------------ 문구 데이터 ------------------
-const FORTUNES = [
-      { text:"오늘은 괜히 더 예뻐 보이는 날이에요.", desc:"말하지 않아도 분위기가 먼저 전달되는 하루.", tag:"오늘의 운세" },
+    // ------------------ 운세 문구 ------------------
+    const FORTUNES = [
+      { text:"오늘은 괜히 더 예뻐 보이는 날이에요.", desc:"말하지 않아도 분위기가 먼저 전달되는 하루.", tag:"행운 메시지" },
       { text:"당신의 눈빛이 가장 매력적인 하루.", desc:"시선이 오래 머무는 날이에요.", tag:"행운 메시지" },
-      { text:"오늘은 ‘관리 잘 받았네?’라는 말을 듣는 날.", desc:"디테일이 차이를 만들어요.", tag:"오늘의 운세" },
-      { text:"지금의 당신, 충분히 아름다워요.", desc:"그리고 오늘은 그게 더 또렷해져요.", tag:"오늘의 한마디" },
+      { text:"오늘은 ‘관리 잘 받았네?’라는 말을 듣는 날.", desc:"디테일이 차이를 만들어요.", tag:"행운 메시지" },
+      { text:"지금의 당신, 충분히 아름다워요.", desc:"그리고 오늘은 그게 더 또렷해져요.", tag:"행운 메시지" },
       { text:"오늘은 사진이 잘 나오는 날.", desc:"기록해두고 싶은 순간이 생겨요.", tag:"행운 메시지" },
-      { text:"괜히 다시 거울을 보게 되는 하루.", desc:"자신감이 은근히 올라가요.", tag:"오늘의 운세" },
-      { text:"오늘은 당신이 주인공이에요.", desc:"배경이 아니라 중심에 서는 날.", tag:"오늘의 한마디" },
+      { text:"괜히 다시 거울을 보게 되는 하루.", desc:"자신감이 은근히 올라가요.", tag:"행운 메시지" },
+      { text:"오늘은 당신이 주인공이에요.", desc:"배경이 아니라 중심에 서는 날.", tag:"행운 메시지" },
       { text:"조용히 매력지수가 상승하는 날.", desc:"티 안 나지만 확실하게.", tag:"행운 메시지" },
-      { text:"오늘은 은근히 부러움을 사는 하루.", desc:"말없이 느껴지는 차이.", tag:"오늘의 운세" },
-      { text:"당신의 분위기가 공간을 바꿔요.", desc:"들어서는 순간 공기가 달라져요.", tag:"오늘의 한마디" },
-
-      { text:"오늘은 ‘역시 다르네’라는 말을 듣는 날.", desc:"작은 차이가 큰 인상을 남겨요.", tag:"행운 메시지" },
-      { text:"당신의 디테일이 빛나는 하루.", desc:"섬세함이 매력을 완성해요.", tag:"오늘의 운세" },
-      { text:"괜히 다시 오고 싶어지는 날.", desc:"좋은 선택은 반복하게 돼요.", tag:"행운 메시지" },
-      { text:"오늘은 자신감이 표정에 올라오는 날.", desc:"말하지 않아도 느껴져요.", tag:"오늘의 한마디" },
-      { text:"지금 결정은 좋은 방향이에요.", desc:"감각이 예민해지는 하루.", tag:"오늘의 운세" },
-      { text:"오늘은 재방문 운이 살짝 올라가요.", desc:"다시 찾고 싶은 마음이 생겨요.", tag:"행운 메시지" },
-      { text:"당신은 이미 충분히 잘하고 있어요.", desc:"그리고 오늘은 그걸 인정받아요.", tag:"오늘의 한마디" },
-      { text:"괜히 더 단정해 보이는 날.", desc:"정리된 느낌이 매력을 만들어요.", tag:"오늘의 운세" },
-      { text:"오늘은 예약 타이밍이 좋은 날.", desc:"흐름이 당신 편이에요.", tag:"행운 메시지" },
-      { text:"당신의 오늘은 고급스럽게 흐르는 날.", desc:"급하지 않아도 충분히 빛나요.", tag:"오늘의 한마디" },
-
-      { text:"오늘은 ‘잘 어울린다’는 말을 듣는 날.", desc:"자연스러운 조화가 완성돼요.", tag:"오늘의 운세" },
-      { text:"당신의 하루에 작은 럭키가 들어와요.", desc:"사소하지만 기분 좋은 순간.", tag:"행운 메시지" },
-      { text:"오늘은 관리의 힘을 느끼는 날.", desc:"작은 변화가 큰 차이를 만들어요.", tag:"오늘의 한마디" },
-      { text:"괜히 자신감이 차오르는 하루.", desc:"내가 나를 더 마음에 들어 하는 날.", tag:"오늘의 운세" },
       { text:"오늘은 ‘여기 오길 잘했다’는 생각이 드는 날.", desc:"선택이 만족으로 이어져요.", tag:"행운 메시지" },
+      { text:"오늘은 한 단계 더 예뻐지는 날.", desc:"은은하게, 그러나 확실하게.", tag:"행운 메시지" }
+    ];
 
-      { text:"당신의 분위기가 더 또렷해지는 하루.", desc:"흐릿했던 감정이 정리돼요.", tag:"오늘의 운세" },
-      { text:"오늘은 미묘하게 매력이 올라가는 날.", desc:"설명은 어렵지만 분명해요.", tag:"행운 메시지" },
-      { text:"괜히 다시 보고 싶어지는 인상.", desc:"잔상이 오래 남아요.", tag:"오늘의 한마디" },
-      { text:"오늘은 타이밍이 부드럽게 맞는 날.", desc:"흐름이 자연스러워요.", tag:"오늘의 운세" },
-      { text:"당신의 선택은 늘 옳은 방향이에요.", desc:"특히 오늘은 더 그래요.", tag:"행운 메시지" },
-
-      { text:"오늘은 말 한마디가 당신의 이미지를 바꾸는 날.", desc:"부드럽게 건넨 말이 오래 남아요.", tag:"행운 메시지" },
-      { text:"당신의 표정이 가장 예쁜 하루.", desc:"억지 웃음이 아니라 자연스러운 자신감.", tag:"오늘의 운세" },
-      { text:"오늘은 ‘괜히 더 정돈돼 보인다’는 말을 듣는 날.", desc:"정리는 곧 분위기예요.", tag:"오늘의 한마디" },
-      { text:"당신의 존재감이 또렷해지는 날.", desc:"작은 차이가 큰 인상을 만들어요.", tag:"행운 메시지" },
-      { text:"오늘은 은근히 시선이 모이는 하루.", desc:"꾸미지 않아도 매력이 살아나요.", tag:"오늘의 운세" },
-
-      { text:"당신의 감각이 빛나는 날.", desc:"선택이 자연스럽게 세련돼요.", tag:"오늘의 한마디" },
-      { text:"오늘은 ‘여유 있어 보인다’는 말을 듣는 날.", desc:"마음의 속도가 안정돼요.", tag:"행운 메시지" },
-      { text:"괜히 기분이 정리되는 하루.", desc:"관리받는 느낌이 오래 가요.", tag:"오늘의 운세" },
-      { text:"당신의 디테일이 사람을 끌어당겨요.", desc:"작은 차이가 매력을 만들어요.", tag:"행운 메시지" },
-      { text:"오늘은 한 번 더 예뻐지는 날.", desc:"겹겹이 쌓이는 자신감.", tag:"오늘의 한마디" },
-
-      { text:"당신의 분위기가 한 단계 올라가는 날.", desc:"은은하지만 확실하게.", tag:"오늘의 운세" },
-      { text:"오늘은 ‘괜히 더 세련돼 보인다’는 말을 듣는 날.", desc:"스타일이 자연스럽게 완성돼요.", tag:"행운 메시지" },
-      { text:"당신은 이미 충분히 매력적이에요.", desc:"오늘은 그걸 스스로 인정하는 날.", tag:"오늘의 한마디" },
-      { text:"오늘은 좋은 선택을 반복하게 되는 하루.", desc:"다시 찾고 싶어지는 감정.", tag:"오늘의 운세" },
-      { text:"괜히 기분이 고급스러워지는 날.", desc:"사소한 만족이 쌓여요.", tag:"행운 메시지" },
-
-      { text:"당신의 하루가 부드럽게 흐르는 날.", desc:"급하지 않아도 충분히 좋아요.", tag:"오늘의 한마디" },
-      { text:"오늘은 ‘역시 다르다’는 말을 듣는 날.", desc:"차이는 디테일에서 나와요.", tag:"행운 메시지" },
-      { text:"당신의 오늘은 반짝임이 있어요.", desc:"크지 않아도 분명한 빛.", tag:"오늘의 운세" },
-      { text:"오늘은 예약운이 자연스럽게 따라오는 날.", desc:"타이밍이 기분 좋게 맞아요.", tag:"행운 메시지" },
-      { text:"괜히 더 마음에 드는 나를 만나는 날.", desc:"거울이 친절해져요.", tag:"오늘의 한마디" },
-
-      { text:"당신의 분위기가 깊어지는 하루.", desc:"성숙함이 매력으로 이어져요.", tag:"오늘의 운세" },
-      { text:"오늘은 관리의 효과가 또렷한 날.", desc:"작은 변화가 크게 느껴져요.", tag:"행운 메시지" },
-      { text:"괜히 다시 오고 싶어지는 하루.", desc:"좋은 기억은 반복돼요.", tag:"오늘의 한마디" },
-      { text:"당신의 자신감이 자연스럽게 올라오는 날.", desc:"꾸미지 않아도 충분해요.", tag:"오늘의 운세" },
-      { text:"오늘은 기분이 얼굴에 먼저 올라오는 날.", desc:"표정이 운이에요.", tag:"행운 메시지" },
-
-      { text:"당신은 오늘도 충분히 빛나요.", desc:"그리고 그 빛은 더 선명해져요.", tag:"오늘의 한마디" },
-      { text:"오늘은 사소한 만족이 큰 행복이 되는 날.", desc:"작은 디테일이 완성을 만들어요.", tag:"오늘의 운세" },
-      { text:"괜히 한 번 더 웃게 되는 하루.", desc:"좋은 흐름이 이어져요.", tag:"행운 메시지" },
-      { text:"당신의 오늘은 선택이 잘 맞는 날.", desc:"감각을 믿어도 좋아요.", tag:"오늘의 한마디" },
-      { text:"오늘은 ‘잘 어울린다’는 말을 듣는 날.", desc:"조화가 자연스럽게 완성돼요.", tag:"오늘의 운세" },
-
-      { text:"당신의 하루가 정돈되는 날.", desc:"마음도 함께 정리돼요.", tag:"행운 메시지" },
-      { text:"오늘은 은근히 매력이 오래 남는 날.", desc:"잔향처럼 퍼져요.", tag:"오늘의 한마디" },
-      { text:"괜히 더 단정해 보이는 하루.", desc:"작은 관리가 큰 차이를 만들어요.", tag:"오늘의 운세" },
-      { text:"당신의 오늘은 충분히 가치 있어요.", desc:"스스로를 아껴줄수록 빛나요.", tag:"행운 메시지" },
-      { text:"오늘은 타이밍이 자연스럽게 이어지는 날.", desc:"무리하지 않아도 괜찮아요.", tag:"오늘의 한마디" },
-
-      { text:"당신의 매력이 조용히 올라가는 날.", desc:"은은하지만 확실하게.", tag:"오늘의 운세" },
-      { text:"오늘은 기분 좋은 재방문 운이 들어오는 날.", desc:"다시 찾고 싶어지는 감정.", tag:"행운 메시지" },
-      { text:"괜히 더 마음에 드는 선택을 하게 되는 하루.", desc:"감각이 예민해져요.", tag:"오늘의 한마디" },
-      { text:"당신의 오늘은 세련된 흐름이에요.", desc:"불필요한 건 자연스럽게 정리돼요.", tag:"오늘의 운세" },
-      { text:"오늘은 당신의 디테일이 빛나는 날.", desc:"차이는 작은 곳에서 나와요.", tag:"행운 메시지" },
-
-      { text:"당신은 이미 충분히 잘하고 있어요.", desc:"오늘은 그걸 더 느끼는 날.", tag:"오늘의 한마디" },
-      { text:"오늘은 관리받은 기분이 오래 가는 날.", desc:"잔잔한 만족이 이어져요.", tag:"오늘의 운세" },
-      { text:"괜히 한 번 더 예약하고 싶어지는 하루.", desc:"좋은 기억은 반복돼요.", tag:"행운 메시지" },
-      { text:"당신의 하루는 오늘 더 또렷해요.", desc:"흐릿했던 감정이 정리돼요.", tag:"오늘의 한마디" },
-      { text:"오늘은 ‘역시 여기다’라는 생각이 드는 날.", desc:"선택이 만족으로 이어져요.", tag:"오늘의 운세" },
-
-      { text:"당신의 오늘은 충분히 특별해요.", desc:"그리고 그 특별함은 자연스러워요.", tag:"행운 메시지" },
-      { text:"오늘은 자신감이 표정에 남는 날.", desc:"꾸미지 않아도 전달돼요.", tag:"오늘의 한마디" },
-      { text:"괜히 다시 거울을 보고 싶은 하루.", desc:"기분이 달라져요.", tag:"오늘의 운세" },
-      { text:"당신의 선택은 오늘도 옳아요.", desc:"특히 오늘은 더 그래요.", tag:"행운 메시지" },
-      { text:"오늘은 한 단계 더 예뻐지는 날.", desc:"은은하게, 그러나 확실하게.", tag:"오늘의 한마디" }
+    // ------------------ 쿠폰 등급/확률 설정 ------------------
+    // ✅ 여기 숫자만 바꾸면 확률/상품 변경 가능
+    // weight 합은 아무 값이나 가능(자동 비율)
+    const COUPON_TIERS = [
+      { name:"1등", prize:"10,000원 할인", weight: 3 },
+      { name:"2등", prize:"5,000원 할인",  weight: 12 },
+      { name:"3등", prize:"3,000원 할인",  weight: 25 },
+      { name:"아쉽상", prize:"다음에 더 큰 행운이 올 거예요 ✨", weight: 60 }
     ];
 
     // ------------------ 유틸 ------------------
@@ -429,6 +387,10 @@ const FORTUNES = [
     function todayKey(){
       const d = new Date();
       return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+    }
+    function nowPretty(){
+      const d = new Date();
+      return `${d.getFullYear()}.${pad2(d.getMonth()+1)}.${pad2(d.getDate())} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
     }
 
     function randIndex(max){
@@ -440,6 +402,16 @@ const FORTUNES = [
       return Math.floor(Math.random() * max);
     }
 
+    function randFloat01(){
+      if (window.crypto && crypto.getRandomValues) {
+        const a = new Uint32Array(1);
+        crypto.getRandomValues(a);
+        // 0 <= x < 1
+        return a[0] / 4294967296;
+      }
+      return Math.random();
+    }
+
     function pickOne(arr){ return arr[randIndex(arr.length)]; }
 
     function toast(msg){
@@ -449,15 +421,32 @@ const FORTUNES = [
       setTimeout(() => t.classList.remove("on"), 1200);
     }
 
-    // ------------------ 핵심 로직 ------------------
-    const STORAGE_KEY = "hssup_fortune_simple_v1";
+    async function copyToClipboard(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        toast("복사했어요!");
+      }catch(e){
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("복사했어요!");
+      }
+    }
+
+    // ------------------ 운세 로직 ------------------
+    const FORTUNE_STORAGE_KEY = "hssup_fortune_simple_v1";
 
     function loadOrMakeFortune(forceNew=false){
       const key = todayKey();
 
       if(!forceNew){
         try{
-          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          const saved = JSON.parse(localStorage.getItem(FORTUNE_STORAGE_KEY) || "null");
           if(saved && saved.dateKey === key && saved.payload){
             return saved.payload;
           }
@@ -465,20 +454,16 @@ const FORTUNES = [
       }
 
       const fortune = pickOne(FORTUNES);
-      const payload = {
-        fortune,
-        dateKey: key,
-        madeAt: Date.now()
-      };
+      const payload = { fortune, dateKey:key, madeAt: Date.now() };
 
       try{
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ dateKey:key, payload }));
+        localStorage.setItem(FORTUNE_STORAGE_KEY, JSON.stringify({ dateKey:key, payload }));
       }catch(e){}
 
       return payload;
     }
 
-    function render(payload){
+    function renderFortune(payload){
       const d = new Date();
       const dow = ["일","월","화","수","목","금","토"][d.getDay()];
       $("dateLine").textContent = `${d.getFullYear()}년 ${pad2(d.getMonth()+1)}월 ${pad2(d.getDate())}일 (${dow})`;
@@ -489,14 +474,118 @@ const FORTUNES = [
       $("fortuneDesc").textContent = payload.fortune.desc || "";
     }
 
+    // ------------------ 쿠폰 로직 (평생 1회 / 기기 기준) ------------------
+    const COUPON_STORAGE_KEY = "hssup_coupon_once_v2";
+
+    function generateCouponCode(){
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // O0I1 제외
+      let s = "HSSUP-";
+      for(let i=0;i<6;i++) s += chars[randIndex(chars.length)];
+      return s;
+    }
+
+    function getCouponState(){
+      try{ return JSON.parse(localStorage.getItem(COUPON_STORAGE_KEY) || "null"); }
+      catch(e){ return null; }
+    }
+    function saveCouponState(state){
+      try{ localStorage.setItem(COUPON_STORAGE_KEY, JSON.stringify(state)); }
+      catch(e){}
+    }
+
+    function weightedPickTier(){
+      const total = COUPON_TIERS.reduce((sum, t) => sum + (t.weight || 0), 0);
+      if(total <= 0) return COUPON_TIERS[COUPON_TIERS.length - 1];
+
+      let r = randFloat01() * total;
+      for(const t of COUPON_TIERS){
+        r -= (t.weight || 0);
+        if(r < 0) return t;
+      }
+      return COUPON_TIERS[COUPON_TIERS.length - 1];
+    }
+
+    function openCouponModal(){
+      const st = getCouponState();
+
+      $("couponModal").classList.add("on");
+      $("couponModal").setAttribute("aria-hidden", "false");
+
+      if(st && st.used && st.code){
+        $("couponBadge").textContent = `✅ ${st.tierName || "쿠폰"}`;
+        $("couponPrize").textContent = st.prize || "—";
+        $("couponCode").textContent = st.code;
+        $("couponMeta").textContent = `발급 ${st.createdAt || ""} · (이 기기에서 1회)`;
+
+        $("revealBtn").disabled = true;
+        $("revealBtn").textContent = "✅ 이미 뽑음";
+      }else{
+        $("couponBadge").textContent = "🎲 평생 1회 뽑기";
+        $("couponPrize").textContent = "버튼을 누르면 바로 결과가 나와요";
+        $("couponCode").textContent = "—";
+        $("couponMeta").textContent = "뽑기 후에는 이 기기에서 다시 뽑을 수 없어요.";
+
+        $("revealBtn").disabled = false;
+        $("revealBtn").textContent = "🎲 지금 뽑기";
+      }
+    }
+
+    function closeCouponModal(){
+      $("couponModal").classList.remove("on");
+      $("couponModal").setAttribute("aria-hidden", "true");
+    }
+
+    function revealCouponOnce(){
+      const st = getCouponState();
+      if(st && st.used) return;
+
+      const tier = weightedPickTier();
+      const code = generateCouponCode();
+
+      const newState = {
+        used: true,
+        code,
+        tierName: tier.name,
+        prize: tier.prize,
+        createdAt: nowPretty()
+      };
+      saveCouponState(newState);
+
+      $("couponBadge").textContent = `🎉 ${tier.name}`;
+      $("couponPrize").textContent = tier.prize;
+      $("couponCode").textContent = code;
+      $("couponMeta").textContent = "매장에 이 코드를 보여주세요 (이 기기에서 1회)";
+
+      $("revealBtn").disabled = true;
+      $("revealBtn").textContent = "✅ 발급 완료";
+      toast("쿠폰 결과가 나왔어요!");
+    }
+
+    // ------------------ init ------------------
     (function init(){
       const payload = loadOrMakeFortune(false);
-      render(payload);
+      renderFortune(payload);
 
       $("newBtn").addEventListener("click", () => {
         const payload2 = loadOrMakeFortune(true);
-        render(payload2);
+        renderFortune(payload2);
         toast("새 운세를 뽑았어요!");
+      });
+
+      $("couponBtn").addEventListener("click", openCouponModal);
+      $("closeModalBtn").addEventListener("click", closeCouponModal);
+      $("okBtn").addEventListener("click", closeCouponModal);
+
+      $("couponModal").addEventListener("click", (e) => {
+        if(e.target === $("couponModal")) closeCouponModal();
+      });
+
+      $("revealBtn").addEventListener("click", revealCouponOnce);
+
+      $("copyCouponBtn").addEventListener("click", async () => {
+        const st = getCouponState();
+        if(st && st.code) await copyToClipboard(st.code);
+        else toast("먼저 쿠폰을 뽑아주세요!");
       });
     })();
   </script>
