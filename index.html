@@ -295,6 +295,35 @@
   button, a.btn{ flex:1 1 100%; }
 }
 
+/* ✅ 모바일 상단 겹침 해결 */
+.top{
+  flex-wrap: wrap;              /* 좁으면 다음 줄로 */
+}
+
+.brand{
+  flex: 1 1 240px;              /* 브랜드 영역이 먼저 자리 잡게 */
+  min-width: 0;
+}
+
+.pill{
+  flex: 0 0 auto;
+  margin-left: auto;            /* 오른쪽 정렬 유지 */
+}
+
+@media (max-width: 520px){
+  .top{
+    gap: 10px;
+  }
+  .pill{
+    width: 100%;                /* ✅ pill을 아예 다음 줄로 내림 */
+    text-align: right;          /* 오른쪽 정렬 */
+  }
+  .brand h1,
+  .brand p{
+    white-space: normal;        /* ✅ 글 줄바꿈 허용 */
+  }
+}
+
   </style>
 </head>
 <body>
