@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>히썹 오늘의 행운</title>
+  <meta name="theme-color" content="#ff7a18" />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111826;
+      --muted:#9aa4b2;
+      --text:#e6edf3;
+      --accent:#ff7a18;     /* 히썹 시그니처 오렌지 */
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 45px rgba(0,0,0,.45);
+      --radius:20px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+      background:
+        radial-gradient(1100px 650px at 20% -10%, rgba(255,122,24,.18), transparent 55%),
+        radial-gradient(900px 600px at 110% 10%, rgba(45,212,191,.10), transparent 50%),
+        radial-gradient(900px 700px at 40% 120%, rgba(251,113,133,.08), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+    }
+    .wrap{
+      width:min(560px, 100%);
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(255,122,24,1), rgba(255,200,140,.9));
+      box-shadow: 0 10px 22px rgba(255,122,24,.18);
+      display:grid; place-items:center;
+      color:#111;
+      font-weight:900;
+      letter-spacing:.5px;
+    }
+    .brand h1{
+      font-size:16px;
+      margin:0;
+      letter-spacing:-.2px;
+    }
+    .brand p{
+      margin:2px 0 0;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .pill{
+      font-size:12px;
+      color:rgba(0,0,0,.85);
+      background: rgba(255,122,24,1);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:-.2px;
+      box-shadow: 0 10px 25px rgba(255,122,24,.16);
+      white-space:nowrap;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(17,24,38,1), rgba(17,24,38,.86));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      padding:20px 20px 16px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .date{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .title{
+      font-size:18px;
+      font-weight:900;
+      margin:0;
+      letter-spacing:-.3px;
+      line-height:1.25;
+    }
+    .subtitle{
+      margin:0;
+      font-size:13px;
+      color:rgba(230,237,243,.86);
+      line-height:1.5;
+    }
+
+    .content{
+      padding:18px 20px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .fortuneBox{
+      border:1px solid rgba(255,122,24,.25);
+      background: rgba(255,122,24,.06);
+      border-radius: 18px;
+      padding:16px 14px;
+    }
+    .fortuneType{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      font-weight:800;
+      color: rgba(255,200,140,1);
+      margin-bottom:10px;
+      letter-spacing:-.2px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: rgba(255,122,24,1);
+      box-shadow: 0 0 0 4px rgba(255,122,24,.15);
+    }
+    .fortuneText{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.35px;
+      line-height:1.35;
+      margin:0;
+      word-break:keep-all;
+    }
+    .fortuneDesc{
+      margin:10px 0 0;
+      font-size:13px;
+      color: rgba(230,237,243,.86);
+      line-height:1.6;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.03);
+    }
+    .mini .k{
+      font-size:12px;
+      color: var(--muted);
+      margin:0 0 6px;
+    }
+    .mini .v{
+      font-size:14px;
+      font-weight:900;
+      margin:0;
+      letter-spacing:-.25px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:2px;
+    }
+    button, a.btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding:12px 12px;
+      border-radius: 14px;
+      font-weight:900;
+      letter-spacing:-.2px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex:1 1 150px;
+      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+    }
+    button:hover, a.btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,122,24,.35);
+      background: rgba(255,122,24,.06);
+    }
+    button.primary{
+      border-color: rgba(255,122,24,.45);
+      background: rgba(255,122,24,.12);
+    }
+    .footer{
+      padding:14px 20px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.55;
+    }
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform: translateX(-50%);
+      background: rgba(17,24,38,.95);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+      border-radius: 999px;
+      padding:10px 14px;
+      font-size:12px;
+      color: var(--text);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .toast.on{
+      opacity:1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+
+    @media (max-width:420px){
+      .grid{ grid-template-columns:1fr; }
+      .fortuneText{ font-size:17px; }
+      button, a.btn{ flex:1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <h1>히썹 · 오늘의 행운</h1>
+          <p>QR 찍고 하루가 특별해지는 한 문장</p>
+        </div>
+      </div>
+      <div class="pill" id="todayPill">Today</div>
+    </div>
+
+    <div class="card">
+      <div class="hero">
+        <div class="date" id="dateLine"></div>
+        <p class="title">오늘 당신에게 딱 맞는 한 줄을 뽑아드릴게요.</p>
+        <p class="subtitle">같은 날에는 같은 휴대폰에서 문구가 유지돼요. (운세 느낌!)</p>
+      </div>
+
+      <div class="content">
+        <div class="fortuneBox">
+          <div class="fortuneType"><span class="dot"></span><span id="fortuneTag">오늘의 한마디</span></div>
+          <p class="fortuneText" id="fortuneText">불러오는 중…</p>
+          <p class="fortuneDesc" id="fortuneDesc"></p>
+        </div>
+
+        <div class="grid">
+          <div class="mini">
+            <p class="k">행운 키워드</p>
+            <p class="v" id="luckyKeyword">—</p>
+          </div>
+          <div class="mini">
+            <p class="k">럭키 컬러</p>
+            <p class="v" id="luckyColor">—</p>
+          </div>
+          <div class="mini">
+            <p class="k">오늘의 추천</p>
+            <p class="v" id="todayTip">—</p>
+          </div>
+          <div class="mini">
+            <p class="k">한 가지 약속</p>
+            <p class="v" id="onePromise">—</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="newBtn" type="button">🔄 새 운세 뽑기</button>
+          <button id="copyBtn" type="button">📋 문구 복사</button>
+          <button id="shareBtn" type="button">📲 공유</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        💡 팁: 키링 QR은 <b>항상 같은 링크</b>로 찍어두면 관리가 제일 편해요.<br/>
+        © HSSUP — 오늘도 예뻐질 행운이 쏟아지는 날 ✨
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">완료!</div>
+
+  <script>
+    // ------------------ 데이터(문구/키워드/팁) ------------------
+    // 원하면 이 리스트만 더 길게(200~500개) 늘려도 됩니다.
+    const FORTUNES = [
+      { text: "오늘은 ‘티 안 나게 잘 되는 날’이에요.", desc: "크게 티 나진 않아도, 하나씩 착착 정리되는 흐름이 와요. 오늘은 ‘작은 완료’가 행운이에요.", tag:"오늘의 운세" },
+      { text: "지금 떠오른 그 선택, 꽤 정확해요.", desc: "머리가 아니라 ‘감’으로 느낀 쪽이 더 맞을 확률이 높아요. 부담 없이 한 걸음만.", tag:"오늘의 한마디" },
+      { text: "말 한마디가 복이 되는 날.", desc: "칭찬·감사·응원이 행운을 불러요. 오늘은 먼저 건네는 사람이 이겨요.", tag:"행운 메시지" },
+      { text: "오래 고민한 일, 오늘은 결론이 나요.", desc: "완벽한 답은 없어도 ‘지금 가능한 최선’이 보여요. 정하면 편해져요.", tag:"오늘의 운세" },
+      { text: "작게 시작하면 크게 이어져요.", desc: "큰 계획보다 10분 행동이 더 강력해요. 오늘은 ‘시작’이 운이에요.", tag:"행운 메시지" },
+      { text: "마음이 가벼워지면 일이 풀려요.", desc: "해야 할 것 1개만 확실히 끝내고, 나머진 내일의 나에게 맡겨도 돼요.", tag:"오늘의 한마디" },
+      { text: "누군가가 당신을 ‘좋게’ 보고 있어요.", desc: "내가 모르는 곳에서 평가가 올라가고 있어요. 평소처럼만 해도 충분해요.", tag:"오늘의 운세" },
+      { text: "오늘은 미루던 ‘정리’가 금운.", desc: "가방/책상/사진첩/메모… 하나만 정리해도 흐름이 바뀌어요.", tag:"행운 메시지" },
+      { text: "‘예쁘게’ 결정하면 ‘좋게’ 풀려요.", desc: "오늘은 심미감이 운이에요. 깔끔하게, 가볍게, 그리고 자신 있게.", tag:"오늘의 한마디" },
+      { text: "좋은 사람과의 연결이 생겨요.", desc: "우연처럼 보이지만 필연인 만남이 있어요. 가볍게 인사부터.", tag:"오늘의 운세" },
+      { text: "오늘은 속도가 아니라 방향의 날.", desc: "빨리 가는 것보다 ‘맞는 쪽’을 택하면 결과가 훨씬 좋아져요.", tag:"오늘의 한마디" },
+      { text: "당신의 ‘기준’이 빛나는 날이에요.", desc: "흔들리지 않는 태도가 사람을 끌어당겨요. 오늘은 단단함이 매력.", tag:"행운 메시지" },
+      { text: "작은 럭키가 연속으로 들어와요.", desc: "자리, 타이밍, 연락… 사소한 운이 모여 큰 만족이 돼요.", tag:"오늘의 운세" },
+      { text: "오늘은 ‘내 편’이 늘어나는 날.", desc: "도움받을 수 있는 사람, 이야기할 수 있는 사람이 늘어날 거예요.", tag:"행운 메시지" },
+      { text: "한 번 더 웃으면, 행운이 한 번 더 와요.", desc: "기분 좋은 표정이 생각보다 많은 걸 바꿔줘요. 오늘은 표정이 운.", tag:"오늘의 한마디" }
+    ];
+
+    const KEYWORDS = ["정리", "자신감", "가벼움", "연결", "집중", "미소", "시작", "선택", "완료", "감사", "용기", "여유", "행운", "센스", "균형"];
+    const COLORS = ["히썹 오렌지", "크림 베이지", "소프트 블랙", "미드나잇 네이비", "로즈 브라운", "오프화이트", "샴페인 골드"];
+    const TIPS = [
+      "거울 볼 때 어깨 펴기",
+      "마음에 드는 사진 한 장 저장",
+      "하고 싶은 말 ‘짧게’ 전하기",
+      "물 한 잔 먼저 마시기",
+      "핸드폰 사진 10장 정리",
+      "오늘 할 일 1개만 완벽히"
+    ];
+    const PROMISES = [
+      "오늘은 나를 함부로 대하지 않기",
+      "좋은 말 한 번 먼저 하기",
+      "피곤하면 쉬어도 괜찮다고 허락하기",
+      "나를 칭찬 1개 하기",
+      "미루던 것 하나만 끝내기",
+      "작게라도 시작하기"
+    ];
+
+    // ------------------ 유틸 ------------------
+    const $ = (id) => document.getElementById(id);
+
+    function pad2(n){ return String(n).padStart(2, "0"); }
+    function todayKey(){
+      const d = new Date();
+      return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+    }
+
+    function randIndex(max){
+      // crypto가 있으면 더 랜덤하게
+      if (window.crypto && crypto.getRandomValues) {
+        const a = new Uint32Array(1);
+        crypto.getRandomValues(a);
+        return a[0] % max;
+      }
+      return Math.floor(Math.random() * max);
+    }
+
+    function pickOne(arr){
+      return arr[randIndex(arr.length)];
+    }
+
+    function toast(msg){
+      const t = $("toast");
+      t.textContent = msg;
+      t.classList.add("on");
+      setTimeout(() => t.classList.remove("on"), 1400);
+    }
+
+    // ------------------ 핵심 로직 ------------------
+    // 같은 날 같은 폰에서는 동일한 결과가 나오도록 localStorage에 저장합니다.
+    const STORAGE_KEY = "hssup_fortune_v1";
+
+    function loadOrMakeFortune(forceNew=false){
+      const key = todayKey();
+
+      if(!forceNew){
+        try{
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          if(saved && saved.dateKey === key && saved.payload){
+            return saved.payload;
+          }
+        }catch(e){}
+      }
+
+      const fortune = pickOne(FORTUNES);
+      const payload = {
+        fortune,
+        keyword: pickOne(KEYWORDS),
+        color: pickOne(COLORS),
+        tip: pickOne(TIPS),
+        promise: pickOne(PROMISES),
+        dateKey: key,
+        madeAt: Date.now()
+      };
+
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ dateKey:key, payload }));
+      }catch(e){ /* storage 불가 환경이면 그냥 진행 */ }
+
+      return payload;
+    }
+
+    function render(payload){
+      const d = new Date();
+      const dow = ["일","월","화","수","목","금","토"][d.getDay()];
+      $("dateLine").textContent = `${d.getFullYear()}년 ${pad2(d.getMonth()+1)}월 ${pad2(d.getDate())}일 (${dow})`;
+      $("todayPill").textContent = `HSSUP LUCKY · ${todayKey()}`;
+
+      $("fortuneTag").textContent = payload.fortune.tag || "오늘의 한마디";
+      $("fortuneText").textContent = payload.fortune.text;
+      $("fortuneDesc").textContent = payload.fortune.desc || "";
+
+      $("luckyKeyword").textContent = payload.keyword;
+      $("luckyColor").textContent = payload.color;
+      $("todayTip").textContent = payload.tip;
+      $("onePromise").textContent = payload.promise;
+    }
+
+    function getShareText(){
+      const saved = loadOrMakeFortune(false);
+      const text =
+`[히썹 오늘의 행운]
+${saved.fortune.text}
+- 행운 키워드: ${saved.keyword}
+- 럭키 컬러: ${saved.color}
+
+오늘도 예쁘게, 히썹 ✨`;
+      return text;
+    }
+
+    async function copyToClipboard(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        toast("복사했어요!");
+      }catch(e){
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("복사했어요!");
+      }
+    }
+
+    async function shareText(text){
+      try{
+        if(navigator.share){
+          await navigator.share({ title:"히썹 오늘의 행운", text, url: location.href });
+          toast("공유 완료!");
+        }else{
+          await copyToClipboard(text + "\n" + location.href);
+          toast("공유 기능이 없어 링크를 복사했어요!");
+        }
+      }catch(e){
+        // 사용자가 공유 취소해도 에러로 떨어질 수 있어 무시
+      }
+    }
+
+    // ------------------ 이벤트 ------------------
+    (function init(){
+      const payload = loadOrMakeFortune(false);
+      render(payload);
+
+      $("newBtn").addEventListener("click", () => {
+        // "새 운세 뽑기"는 오늘이라도 강제로 새로 뽑게
+        const payload2 = loadOrMakeFortune(true);
+        render(payload2);
+        toast("새 운세를 뽑았어요!");
+      });
+
+      $("copyBtn").addEventListener("click", async () => {
+        await copyToClipboard(getShareText());
+      });
+
+      $("shareBtn").addEventListener("click", async () => {
+        await shareText(getShareText());
+      });
+    })();
+  </script>
+</body>
+</html>
