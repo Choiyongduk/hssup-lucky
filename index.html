@@ -7,34 +7,37 @@
   <meta name="theme-color" content="#ff7a18" />
   <style>
     :root{
-      --bg:#0b0f14;
-      --card:#111826;
-      --muted:#9aa4b2;
-      --text:#e6edf3;
-      --accent:#ff7a18;     /* 히썹 시그니처 오렌지 */
-      --line:rgba(255,255,255,.10);
-      --shadow: 0 18px 45px rgba(0,0,0,.45);
-      --radius:20px;
+      --bg1:#eef1f6;       /* 실버 베이스 */
+      --bg2:#cfd6e2;       /* 실버 그라데이션 */
+      --card:rgba(255,255,255,.62);
+      --muted:#4b5563;
+      --text:#0b1220;
+      --accent:#ff7a18;    /* 히썹 오렌지 */
+      --line:rgba(15,23,42,.12);
+      --shadow: 0 18px 55px rgba(15,23,42,.18);
+      --radius:22px;
     }
     *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
-      background:
-        radial-gradient(1100px 650px at 20% -10%, rgba(255,122,24,.18), transparent 55%),
-        radial-gradient(900px 600px at 110% 10%, rgba(45,212,191,.10), transparent 50%),
-        radial-gradient(900px 700px at 40% 120%, rgba(251,113,133,.08), transparent 55%),
-        var(--bg);
-      color:var(--text);
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:22px;
+      color:var(--text);
+
+      /* 실버 메탈릭 느낌 배경 */
+      background:
+        radial-gradient(1200px 700px at 15% 0%, rgba(255,122,24,.18), transparent 55%),
+        radial-gradient(900px 650px at 110% 5%, rgba(0,0,0,.08), transparent 55%),
+        radial-gradient(900px 700px at 50% 115%, rgba(255,255,255,.65), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
     }
-    .wrap{
-      width:min(560px, 100%);
-    }
+
+    .wrap{ width:min(560px, 100%); }
+
     .top{
       display:flex;
       align-items:center;
@@ -42,72 +45,93 @@
       gap:12px;
       margin-bottom:14px;
     }
+
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
+      min-width:0;
     }
+
     .logo{
-      width:42px;height:42px;border-radius:14px;
-      background: linear-gradient(135deg, rgba(255,122,24,1), rgba(255,200,140,.9));
-      box-shadow: 0 10px 22px rgba(255,122,24,.18);
+      width:44px;height:44px;border-radius:16px;
+      background:
+        linear-gradient(135deg, rgba(255,122,24,1), rgba(255,200,140,1));
+      box-shadow: 0 14px 30px rgba(255,122,24,.22);
       display:grid; place-items:center;
       color:#111;
       font-weight:900;
       letter-spacing:.5px;
+      flex:0 0 auto;
     }
+
     .brand h1{
       font-size:16px;
       margin:0;
-      letter-spacing:-.2px;
+      letter-spacing:-.25px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
     .brand p{
       margin:2px 0 0;
       font-size:12px;
-      color:var(--muted);
+      color:rgba(15,23,42,.65);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
+
     .pill{
       font-size:12px;
-      color:rgba(0,0,0,.85);
+      color:rgba(0,0,0,.88);
       background: rgba(255,122,24,1);
       padding:8px 10px;
       border-radius:999px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-.2px;
-      box-shadow: 0 10px 25px rgba(255,122,24,.16);
+      box-shadow: 0 14px 30px rgba(255,122,24,.18);
       white-space:nowrap;
+      flex:0 0 auto;
     }
 
     .card{
-      background: linear-gradient(180deg, rgba(17,24,38,1), rgba(17,24,38,.86));
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.55);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
+
+      /* 글래스 카드 */
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
+
     .hero{
       padding:20px 20px 16px;
-      border-bottom: 1px solid var(--line);
+      border-bottom:1px solid rgba(15,23,42,.10);
       display:flex;
       flex-direction:column;
       gap:8px;
     }
     .date{
       font-size:12px;
-      color:var(--muted);
+      color:rgba(15,23,42,.62);
+      font-weight:700;
     }
     .title{
       font-size:18px;
-      font-weight:900;
+      font-weight:1000;
       margin:0;
-      letter-spacing:-.3px;
+      letter-spacing:-.35px;
       line-height:1.25;
     }
     .subtitle{
       margin:0;
       font-size:13px;
-      color:rgba(230,237,243,.86);
-      line-height:1.5;
+      color:rgba(15,23,42,.70);
+      line-height:1.55;
+      font-weight:650;
     }
 
     .content{
@@ -118,8 +142,8 @@
     }
 
     .fortuneBox{
-      border:1px solid rgba(255,122,24,.25);
-      background: rgba(255,122,24,.06);
+      border:1px solid rgba(255,122,24,.30);
+      background: linear-gradient(180deg, rgba(255,122,24,.08), rgba(255,255,255,.35));
       border-radius: 18px;
       padding:16px 14px;
     }
@@ -128,20 +152,20 @@
       align-items:center;
       gap:8px;
       font-size:12px;
-      font-weight:800;
-      color: rgba(255,200,140,1);
+      font-weight:900;
+      color: rgba(255,122,24,1);
       margin-bottom:10px;
       letter-spacing:-.2px;
     }
     .dot{
-      width:8px;height:8px;border-radius:999px;
+      width:9px;height:9px;border-radius:999px;
       background: rgba(255,122,24,1);
-      box-shadow: 0 0 0 4px rgba(255,122,24,.15);
+      box-shadow: 0 0 0 5px rgba(255,122,24,.16);
     }
     .fortuneText{
       font-size:18px;
-      font-weight:900;
-      letter-spacing:-.35px;
+      font-weight:1000;
+      letter-spacing:-.45px;
       line-height:1.35;
       margin:0;
       word-break:keep-all;
@@ -149,8 +173,9 @@
     .fortuneDesc{
       margin:10px 0 0;
       font-size:13px;
-      color: rgba(230,237,243,.86);
-      line-height:1.6;
+      color: rgba(15,23,42,.82);
+      line-height:1.65;
+      font-weight:650;
     }
 
     .grid{
@@ -159,19 +184,20 @@
       gap:10px;
     }
     .mini{
-      border:1px solid var(--line);
+      border:1px solid rgba(15,23,42,.10);
       border-radius: 16px;
       padding:12px 12px;
-      background: rgba(255,255,255,.03);
+      background: rgba(255,255,255,.42);
     }
     .mini .k{
       font-size:12px;
-      color: var(--muted);
+      color: rgba(15,23,42,.62);
       margin:0 0 6px;
+      font-weight:800;
     }
     .mini .v{
       font-size:14px;
-      font-weight:900;
+      font-weight:1000;
       margin:0;
       letter-spacing:-.25px;
     }
@@ -182,14 +208,15 @@
       flex-wrap:wrap;
       margin-top:2px;
     }
+
     button, a.btn{
       appearance:none;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.55);
       color: var(--text);
       padding:12px 12px;
       border-radius: 14px;
-      font-weight:900;
+      font-weight:1000;
       letter-spacing:-.2px;
       cursor:pointer;
       text-decoration:none;
@@ -198,32 +225,36 @@
       justify-content:center;
       gap:8px;
       flex:1 1 150px;
-      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+      transition: transform .08s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
     }
     button:hover, a.btn:hover{
       transform: translateY(-1px);
-      border-color: rgba(255,122,24,.35);
-      background: rgba(255,122,24,.06);
+      border-color: rgba(255,122,24,.40);
+      box-shadow: 0 14px 28px rgba(15,23,42,.10);
+      background: rgba(255,255,255,.72);
     }
     button.primary{
-      border-color: rgba(255,122,24,.45);
-      background: rgba(255,122,24,.12);
+      border-color: rgba(255,122,24,.55);
+      background: linear-gradient(180deg, rgba(255,122,24,.20), rgba(255,255,255,.55));
     }
+
     .footer{
       padding:14px 20px 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      border-top: 1px solid rgba(15,23,42,.10);
+      color: rgba(15,23,42,.70);
       font-size:12px;
-      line-height:1.55;
+      line-height:1.6;
+      font-weight:650;
     }
+
     .toast{
       position:fixed;
       left:50%;
       bottom:22px;
       transform: translateX(-50%);
-      background: rgba(17,24,38,.95);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.14);
+      box-shadow: 0 18px 45px rgba(15,23,42,.18);
       border-radius: 999px;
       padding:10px 14px;
       font-size:12px;
@@ -231,6 +262,7 @@
       opacity:0;
       pointer-events:none;
       transition: opacity .18s ease, transform .18s ease;
+      font-weight:900;
     }
     .toast.on{
       opacity:1;
@@ -290,20 +322,18 @@
           </div>
         </div>
 
-<div class="actions">
-  <button class="primary" id="newBtn" type="button">🔄 새 운세 뽑기</button>
-  <button id="copyBtn" type="button">📋 문구 복사</button>
-  <button id="shareBtn" type="button">📲 공유</button>
+        <div class="actions">
+          <button class="primary" id="newBtn" type="button">🔄 새 운세 뽑기</button>
+          <button id="copyBtn" type="button">📋 문구 복사</button>
+          <button id="shareBtn" type="button">📲 공유</button>
 
-  <!-- 예약하기 버튼 -->
-  <a class="btn"
-     href="https://www.instagram.com/h_ssup_/"
-     target="_blank"
-     rel="noopener noreferrer">
-     📅 예약하기 (Instagram)
-  </a>
-</div>
-
+          <a class="btn"
+             href="https://www.instagram.com/h_ssup_/"
+             target="_blank"
+             rel="noopener noreferrer">
+             📅 예약하기 (Instagram)
+          </a>
+        </div>
       </div>
 
       <div class="footer">
@@ -317,7 +347,6 @@
 
   <script>
     // ------------------ 데이터(문구/키워드/팁) ------------------
-    // 원하면 이 리스트만 더 길게(200~500개) 늘려도 됩니다.
     const FORTUNES = [
       { text: "오늘은 ‘티 안 나게 잘 되는 날’이에요.", desc: "크게 티 나진 않아도, 하나씩 착착 정리되는 흐름이 와요. 오늘은 ‘작은 완료’가 행운이에요.", tag:"오늘의 운세" },
       { text: "지금 떠오른 그 선택, 꽤 정확해요.", desc: "머리가 아니라 ‘감’으로 느낀 쪽이 더 맞을 확률이 높아요. 부담 없이 한 걸음만.", tag:"오늘의 한마디" },
@@ -365,7 +394,6 @@
     }
 
     function randIndex(max){
-      // crypto가 있으면 더 랜덤하게
       if (window.crypto && crypto.getRandomValues) {
         const a = new Uint32Array(1);
         crypto.getRandomValues(a);
@@ -386,7 +414,6 @@
     }
 
     // ------------------ 핵심 로직 ------------------
-    // 같은 날 같은 폰에서는 동일한 결과가 나오도록 localStorage에 저장합니다.
     const STORAGE_KEY = "hssup_fortune_v1";
 
     function loadOrMakeFortune(forceNew=false){
@@ -414,7 +441,7 @@
 
       try{
         localStorage.setItem(STORAGE_KEY, JSON.stringify({ dateKey:key, payload }));
-      }catch(e){ /* storage 불가 환경이면 그냥 진행 */ }
+      }catch(e){}
 
       return payload;
     }
@@ -437,14 +464,12 @@
 
     function getShareText(){
       const saved = loadOrMakeFortune(false);
-      const text =
-`[히썹 오늘의 행운]
+      return `[히썹 오늘의 행운]
 ${saved.fortune.text}
 - 행운 키워드: ${saved.keyword}
 - 럭키 컬러: ${saved.color}
 
 오늘도 예쁘게, 히썹 ✨`;
-      return text;
     }
 
     async function copyToClipboard(text){
@@ -452,7 +477,6 @@ ${saved.fortune.text}
         await navigator.clipboard.writeText(text);
         toast("복사했어요!");
       }catch(e){
-        // fallback
         const ta = document.createElement("textarea");
         ta.value = text;
         ta.style.position = "fixed";
@@ -474,18 +498,14 @@ ${saved.fortune.text}
           await copyToClipboard(text + "\n" + location.href);
           toast("공유 기능이 없어 링크를 복사했어요!");
         }
-      }catch(e){
-        // 사용자가 공유 취소해도 에러로 떨어질 수 있어 무시
-      }
+      }catch(e){}
     }
 
-    // ------------------ 이벤트 ------------------
     (function init(){
       const payload = loadOrMakeFortune(false);
       render(payload);
 
       $("newBtn").addEventListener("click", () => {
-        // "새 운세 뽑기"는 오늘이라도 강제로 새로 뽑게
         const payload2 = loadOrMakeFortune(true);
         render(payload2);
         toast("새 운세를 뽑았어요!");
